@@ -1,0 +1,133 @@
+/* 标题 */
+.title {
+  font-family: "Microsoft YaHei";
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 5px;
+  text-shadow: 5px 5px 5px #ccc;
+  border-bottom: 2px #ccc solid;
+  width: 50%;
+  margin: auto;
+}
+/* 列表内容 */
+.text{
+  width: 90%;
+  height: 100%;
+  float: left;
+}
+.cancel{
+  width:5%;
+  height: 100%;
+  float: left;
+}
+.a-avatar {
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+.top{
+  width: 100%;
+  height: 90%;
+}
+
+
+.a-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+
+.a-man {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1rpx #eaeaea solid;
+  margin: 10px;
+}
+.text-left {
+  width: 10%;
+  height: 100%;
+  float: left;
+}
+
+.text-center {
+  width: 68%;
+  height: 100%;
+  float: left;
+}
+
+.text-right {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+.nickName {
+  font-size: 12px;
+  color: black;
+  width: 100%;
+  height: 5%;
+  padding: 1%;
+  font-weight: bold;
+}
+
+.answer {
+  font-size: 12px;
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  width: 95%;
+  margin-right: 5%;
+  padding: 1%;
+}
+
+.a-time {
+  height: 3%;
+  font-size: 10px;
+  color: #969696;
+  padding: 1%;
+}
+
+.content {
+  height: 40px;
+  background-color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.question {
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+
+.margin-buttom{
+  margin-bottom: 18%;
+}
+/* 提交按钮 */
+.questionbtn {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  width: 100%;
+  border-radius: 5%;
+}
+
+.question {
+  width: 100%;
+  color: white;
+  background-color: #29b7a4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3%;
+}

@@ -1,0 +1,6 @@
+.btn{
+  width:90%;
+  font-size:15px;
+  color:white;
+  background-color: #29B7A4;  
+}

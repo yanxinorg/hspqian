@@ -1,0 +1,59 @@
+<view class='indexBGC'>
+   <!-- 搜索栏 begin  -->
+   <view class='searchwhite'>
+  </view>
+  <view class="searchBar">
+    <input placeholder="搜索" placeholder-color='input-placeholder' class="ipt" placeholder-style="color: #cccccc">
+    </input>
+  </view> 
+  <!-- 搜索栏 begin -->
+
+  <!-- 功能栏 begin -->
+  <view class="circlebar">
+    <view class='circlebar-son'>
+      <navigator url="../fast-question/fast-question" hover-class="none">
+        <view class="circlebar-son-top">
+          <image src='../../images/quickQuestion.png' style='width:100%;height:100%;'></image>
+        </view>
+        <view class="circlebar-son-bottom">
+          <view class='word'>快速提问</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='circlebar-son'>
+      <navigator url="../find-disease/find-disease" hover-class="none">
+        <view class="circlebar-son-top">
+          <image src='../../images/findDisease.png' style='width:100%;height:100%;'></image>
+        </view>
+        <view class="circlebar-son-bottom">
+          <view class='word'>寻找疾病</view>
+        </view>
+      </navigator>
+    </view>
+    <view class='circlebar-son'>
+      <navigator url="../find-doctor/find-doctor" hover-class="none">
+        <view class="circlebar-son-top">
+          <image src='../../images/findDoctor.png' style='width:100%;height:100%;'></image>
+        </view>
+        <view class="circlebar-son-bottom">
+          <view class='word'>寻找医生</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <!-- 功能栏 end -->
+
+</view>
+
+<!-- 轮播图 begin -->
+<view class="picture">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circle="true">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<!-- 轮播图 end -->
+<view class='hr'></view>

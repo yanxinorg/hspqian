@@ -1,0 +1,33 @@
+<!-- 搜索栏 begin -->
+<view class="hr">
+</view>
+<form>
+  <input placeholder="搜索疾病" placeholder-color='input-placeholder' class="ipt" focus='true' placeholder-style="color: #cccccc" bindchange="search">
+  </input>
+</form>
+<view class="hr"></view>
+<!-- 搜索栏 end -->
+
+<!-- 分类栏 begin -->
+<view class="table">
+  <view class="tr bg-w" hidden='{{flag}}'> 
+    <view class="th">亲，这里是您要的相似症状~</view>
+  </view>
+  <block wx:for="{{contentlist}}" wx:key='item'>
+    <view wx:if="{{index % 2 == 0}}">
+      <navigator url='../diseaseInfo/diseaseInfo?id={{item.id}}'>
+        <view class="tr bg-g">
+          <view class="td">{{item.name}}</view>
+        </view>
+      </navigator>
+    </view>
+    <view wx:else>
+      <navigator url='../diseaseInfo/diseaseInfo?id={{item.id}}'>
+        <view class="tr">
+          <view class="td">{{item.name}}</view>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</view>
+<!-- 分类栏 end -->

@@ -1,0 +1,41 @@
+<view class="content">
+  <scroll-view scroll-x="true" style="white-space:nowrap;display:flex" class='scrolltitle'>
+    <view wx:for="{{subjects}}" wx:key='item' class="{{currentTab==item.s_id?'select':'default'}}" data-current="{{item.s_id}}" style="display:inline-block" bindtap="switchNav">
+      {{item.s_name}}
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y="true">
+    <block wx:for="{{doctors}}" wx:key='item' wx:if="{{currentTab==item.s_id}}">
+      <view wx:if="{{index % 2 == 0}}">
+        <navigator url='../doctorInfo/doctorInfo?d_id={{item.d_id}}'>
+          <view class="tr bg-g">
+            <view class="td1">
+              <image src="{{item.d_picUrl}}"></image>
+            </view>
+            <view class='td2'>
+              <text class='nametext'>{{item.d_name}}</text>
+              <text class='introtext'>{{item.introduce}}</text>
+              <text class='hospitaltext'>{{item.hospital}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view wx:else>
+        <navigator url='../doctorInfo/doctorInfo?d_id={{item.d_id}}'>
+          <view class="tr">
+            <view class="td1">
+              <image src="{{item.d_picUrl}}"></image>
+            </view>
+            <view class='td2'>
+              <text class='nametext'>{{item.d_name}}</text>
+              <text class='introtext'>{{item.introduce}}</text>
+              <text class='hospitaltext'>{{item.hospital}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 选择块文章 -->
+
+</view>

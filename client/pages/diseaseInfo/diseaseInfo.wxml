@@ -1,0 +1,9 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='bg'>
+  <view class='diseaseW-view'>
+    <text class='diseaseW'>疾病描述</text>
+  </view>
+  <view class="wxParse">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

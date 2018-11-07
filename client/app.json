@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/question/question",
+    "pages/mine/mine",
+    "pages/fast-question/fast-question",
+    "pages/find-doctor/find-doctor", 
+    "pages/find-disease/find-disease",
+    "pages/myquestion/myquestion",
+    "pages/mydisease/mydisease",
+    "pages/diseaseInfo/diseaseInfo",
+    "pages/doctorInfo/doctorInfo",
+    "pages/answerInfo/answerInfo",
+    "pages/article/article",
+    "pages/regist/regist"
+  ],
+  "window":{
+    "backgroundTextStyle": "loading",
+    "navigationBarBackgroundColor": "#29B7A4",
+    "navigationBarTitleText": "云诊所",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "color": "grey",
+    "selectedColor":"#29B7A4",
+    "backgroundColor": "white",
+    "hover-class":"hover",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/houseWhite.png",
+      "selectedIconPath":"images/houseBlue.png"
+    },
+    {
+        "pagePath": "pages/question/question",
+        "text": "问诊",
+        "iconPath": "images/questionWhiteBlock.png",
+        "selectedIconPath": "images/questionBlue.png"
+    },
+    {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/peopleWhite.png",
+        "selectedIconPath": "images/peopleBlue.png"
+        
+    }] 
+  }  
+}

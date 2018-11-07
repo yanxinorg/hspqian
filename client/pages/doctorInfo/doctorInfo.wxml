@@ -1,0 +1,43 @@
+
+<scroll-view scroll-y="true" class="top">
+<!-- 标题 begin -->
+  <view class="content">
+    <view class='title'>网友提问列表</view>
+  </view>
+<!-- 标题 end -->
+<!-- 列表内容 begin -->
+  <view class='margin-buttom'>
+    <view wx:for="{{questions}}" wx:key='item'>
+      <view wx:if="{{item.alive==true}}">
+        <view class="a-man">
+          <view class='text'>
+            <navigator url='../answerInfo/answerInfo?q_id={{item.q_id}}&question={{item.question}}'>
+              <view class='text-left'>
+                <image src="{{item.u_picUrl}}" class="a-avatar"></image>
+              </view>
+              <view class="text-center">
+                <view class="name">{{item.u_name}}</view>
+                <view class="answer">{{item.question}}</view>
+              </view>
+              <view class='text-right'>
+                <view class="a-time">{{item.q_time}}</view>
+              </view>
+            </navigator>
+          </view>
+          <view class='cancel' wx:if="{{userInfo.openId==item.u_id}}" bindtap='delQuestion' >
+            <icon type='cancel' data-q_id="{{item.q_id}}"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- 列表内容 end -->
+</scroll-view>
+
+<!-- 提交按钮 begin -->
+<view class='questionbtn' wx:if="{{!isdoctor}}">
+  <navigator url="../fast-question/fast-question?d_id={{doctor_id}}" class='question'>
+    向该医生提问
+  </navigator>
+</view>
+<!-- 提交按钮 end -->

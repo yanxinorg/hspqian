@@ -1,0 +1,67 @@
+<!--pages/answerInfo/answerInfo.wxml-->
+<view class="page">
+  <view class="margin-bottom">
+  <!-- 网友回复 begin -->
+    <view style='margin-left:10px;margin-right:10px;'>
+      <view class="content">
+        <view class="title">问题
+        </view>
+      </view>
+      <view class="textcontent">
+        <view class="question">{{question}}</view>
+      </view>
+    </view>
+    <!-- 网友回复 end -->
+
+    <!-- 专业回复 begin -->
+    <view style='margin-top:10px;margin-left:10px;margin-right:10px;'>
+      <view class="content">
+        <view class="title">专业回复</view>
+      </view>
+      <view class="answerItem">
+        <view wx:for="{{d_answers}}" wx:key="item">
+          <view class="a-asker">
+            <view class="nickName">{{item.d_name}}</view>
+            <view class="answer">{{item.answer}}</view>
+            <view class="a-time">{{item.a_time}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 专业回复 end -->
+
+    <!-- 网友回复 begin -->
+    <view style='margin:10px;'>
+      <view class="content">
+        <view class='title'>网友回复</view>
+      </view>
+      <view class="answerItem">
+        <view wx:for="{{u_answers}}" wx:key="item">
+          <view class="a-man">
+            <view class='a-man-left'>
+              <image src="{{item.u_picUrl}}" class="a-avatar"></image>
+            </view>
+            <view class='a-man-right'>
+              <view class="nickName">{{item.u_name}}</view>
+              <view class="answer">{{item.answer}}</view>
+              <view class="a-time">{{item.a_time}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 网友回复 end -->
+  </view>
+
+  <!-- 回复框 begin -->
+  <view class="btn">
+    <button bindtap='toAnswer' wx:if="{{!ingAnswer}}" style='background-color: #29B7A4;width:100%;'>回复</button>
+  </view>
+  <!-- 回复框 end -->
+</view>
+<modal wx:if="{{ingAnswer&&!doctorInfo}}" title="网友回复" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="u_sendAnswer">
+  <input type='text' bindinput='answerText' placeholder="请输入内容" focus/>
+</modal>
+<modal wx:if="{{ingAnswer&&doctorInfo}}" title="医生回复" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="d_sendAnswer">
+  <input type='text' bindinput='answerText' placeholder="请输入内容" focus/>
+</modal>

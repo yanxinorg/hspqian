@@ -1,0 +1,86 @@
+<block wx:if="{{d_flag}}">
+  <view class='minebgpicture'>
+    <view class="UserInfo" bindtap="login">
+      <image class="UserImage" src="{{logged ? userInfo.avatarUrl : './user-unlogin.png'}}" background-size="cover"></image>
+      <view>
+        <text class="userinfo-nickname">{{logged ? userInfo.nickName : '点击登录'}}</text>
+        <text class="UserName" wx:if="{{logged}}">{{userInfo.lastLoginTime}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{u_flag}}">
+    <view class='minebg'>
+      <view class='whiteline'>
+      </view>
+      <navigator url='../myquestion/myquestion' class='myq'>
+        <view class="myquestion">
+          <view style='margin-top:5px;margin-left:10px;'>
+            <view class='left'>我的问诊</view>
+            <view class="right">
+              <image src='../../images/arrowright.png' style='width:15px;;height:100%'></image>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class='whiteline'>
+      </view>
+      <navigator url='../mydisease/mydisease' class='myd'>
+        <view class="mydisease">
+          <view style='margin-top:5px;margin-left:10px;'>
+            <view class='left'>我的病历</view>
+            <view class="right">
+              <image src='../../images/arrowright.png' style='width:15px;;height:100%'></image>
+            </view>
+          </view>
+        </view>
+      </navigator>
+      <view class='whiteline'>
+      </view>
+      <view class="contact">
+        <view class="left">
+          <contact-button type="default-light" size="30" session-from="weapp">反馈
+          </contact-button>
+        </view>
+        <view class="right" style='margin-top:5px;'>
+          <image src='../../images/arrowright.png' style='width:15px;;height:100%'></image>
+        </view>
+      </view>
+      <view style='margin-top:10px;'>
+         <view wx:if="{{!no_doctor}}"> 
+          <button bindtap='d_login'>我是医生</button>
+         </view> 
+         <view wx:else> 
+          <navigator url='../regist/regist?d_id={{userInfo.openId}}'>
+            <button>成为医生</button>
+          </navigator>
+         </view> 
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{!d_flag}}">
+  <view class="UserInfo" wx:if="{{!d_flag}}">
+    <image class="UserImage" src="{{doctorInfo.d_picUrl}}" background-size="cover"></image>
+    <view>
+      <text class="userinfo-nickname">{{doctorInfo.d_name}}</text>
+    </view>
+  </view>
+  <view class='minebg'>
+    <view class='whiteline'>
+    </view>
+    <navigator url='../doctorInfo/doctorInfo?d_id={{doctorInfo.d_id}}&isdoctor=true' class='myq'>
+      <view class="myquestion">
+        <view style='margin-top:5px;margin-left:10px;'>
+          <text>对我的问题</text>
+          <text class='right'>></text>
+        </view>
+      </view>
+    </navigator>
+    <view class='whiteline'>
+    </view>
+    <view>
+      <button bindtap='update_pic'>修改头像</button>
+      <button bindtap='back'>退出</button>
+    </view>
+  </view>
+</block>

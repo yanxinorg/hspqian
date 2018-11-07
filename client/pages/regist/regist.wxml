@@ -1,0 +1,34 @@
+<view class='regist'>
+  <form bindsubmit="formSubmit" class='doctorForm'>
+    <view class='registView-title'>
+      <text class='title'>注册</text>
+    </view>
+    <view class='view-input'>
+      <input name="d_name" type="text" class='regist-input' placeholder="请输入姓名" />
+    </view>
+    <view class='view-input'>
+      <input name="hospital" type="text" class='regist-input' placeholder="请输入所属医院" />
+    </view>
+    <view class='view-Intro'>
+    <textarea name="introduce" class='Intro' placeholder="请输入个人简介"></textarea>
+      <!-- <input name="introduce" class='Intro' type="textarea" placeholder="请输入个人简介" /> -->
+    </view>
+    <view class='view-picker'>
+    <text class='view-picker-text'>所属科室:</text>
+    <picker name="s_index" bindchange="bindCasPickerChange" range='{{subjects}}' range-key='s_name' value='{{index}}' class='picker'>
+      <text>{{subjects[index].s_name}}</text>
+    </picker>
+    </view>
+    <view class='view-image'>
+      <view class='view-image-buttom1'>
+        <button bindtap='up_pic' class='buttom1'>上传头像</button>
+      </view>
+      <view wx:if="{{d_picUrl}}" class='view-image-display'>
+        <image src="{{d_picUrl}}" background-size="cover" class='view-image-image'></image>
+      </view>
+    </view>
+    <view class='view-image-buttom2'>
+    <button formType="submit" class='buttom2'>注册</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,66 @@
+/* 搜索栏 */
+
+.ipt {
+  border: solid;
+  border-color: #dbdbdb;
+  border-radius: 20px;
+  width: 80%;
+  border-width: 2px;
+  margin: auto;
+  background-color: #dbdbdb;
+  padding-left: 15px;
+  font-size: 12px;
+}
+
+.hr {
+  height: 10px;
+  background-color: white;
+}
+
+/* 分类栏 */
+
+.disease {
+  width: 100%;
+  height: 20px;
+  margin-left: 15px;
+  font-size: 12px;
+  color: grey;
+  border-bottom: 1px solid #ccc;
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  justify-content: center;
+  font-size: 12px;
+  color: #ccc;
+  align-items: center;
+}
+
+.tr bg-w {
+  height: 10px;
+}
